@@ -1,0 +1,56 @@
+/*
+Assessment Requirements
+1. Create a variable that can hold a number of NFT's. What type of variable might this be?
+2. Create an object inside your mintNFT function that will hold the metadata for your NFTs. 
+   The metadata values will be passed to the function as parameters. When the NFT is ready, 
+   you will store it in the variable you created in step 1
+3. Your listNFTs() function will print all of your NFTs metadata to the console (i.e. console.log("Name: " + someNFT.name))
+4. For good measure, getTotalSupply() should return the number of NFT's you have created
+*/
+
+// create a variable to hold your NFT's
+const AkashNFTs = []
+
+// this function will take in some values as parameters, create an
+// NFT object using the parameters passed to it for its metadata, 
+// and store it in the variable above.
+function mintNFT (_NFTsurname, _address, _office, _amphibianspecies) {
+    const metadata = {
+        surname : _NFTsurname,
+        address : _address,
+        place : _office,
+        species: _amphibianspecies
+     }
+     AkashNFTs.push(metadata)
+     console.log("done " + _NFTsurname);
+
+
+}
+
+// create a "loop" that will go through an "array" of NFT's
+// and print their metadata with console.log()
+function listNFTs () {
+    for(let i = 0; i < AkashNFTs.length ; i++){
+        console.log("\nNFT unique number "+ (i+1))
+        console.log("Surname : " + AkashNFTs[i].surname)
+        console.log("Address : " + AkashNFTs[i].address)
+        console.log("Place : " + AkashNFTs[i].place)
+        console.log("Species : " + AkashNFTs[i].species)
+    }
+}
+
+// print the total number of NFTs we have minted to the console
+function getTotalSupply() {
+    console.log("\n" +AkashNFTs.length)
+
+}
+
+// call your functions below this line
+mintNFT("Pandey", 121002, "Twin Towers", "frog");
+mintNFT("Sharma", 121004, "Beijing Central", "snake");
+mintNFT("Lal", 121003, "White House", "gorilla");
+mintNFT("Shashtri", 121008, "Villa", "chimpanzee");
+mintNFT("Smith", 121000, "Trump Towers", "monkey");
+mintNFT("Johnson", 12178, "Central Secretariat", "ape");
+listNFTs ()
+getTotalSupply()
